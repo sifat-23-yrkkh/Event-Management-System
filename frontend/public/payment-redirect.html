@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    // Extract status from URL
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+    const bookingId = params.get('bookingId');
+    
+    // Redirect to frontend result page
+    if (status && bookingId) {
+      window.location.href = `/dashboard/payment-result/${bookingId}?status=${status}`;
+    } else {
+      window.location.href = '/payment-error';
+    }
+  </script>
+</head>
+<body>
+  <p>Processing payment...</p>
+</body>
+</html>
